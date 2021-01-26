@@ -86,8 +86,8 @@ baseline deliverables you need to complete:
 
 ### Viewing and Displaying Notes
 
-- [ ] Display all notes in the left sidebar.
-- [ ] Displayed sidebar notes should show the title and a truncated body.
+- [ x ] Display all notes in the left sidebar.
+- [ x ] Displayed sidebar notes should show the title and a truncated body.
 - [ ] When clicking a note from the sidebar, display its contents in the right
       panel.
 
@@ -133,3 +133,5 @@ Some suggestions:
 - Rich text formatting
 - Tagging
 - Emailing notes
+
+

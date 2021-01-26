@@ -10,7 +10,8 @@ import Instructions from "./Instructions";
           Then complete the rest of your app before attempting to
           refactor to get this Content component to work.
 */
-function Content() {
+function Content({currentTitle, currentBody}) {
+
   const getContent = () => {
     if (false) {
       return <NoteEditor />;
@@ -21,7 +22,9 @@ function Content() {
     }
   };
 
-  return <div className="master-detail-element detail">{getContent()}</div>;
+  return <div className="master-detail-element detail">{getContent()}
+  <NoteViewer currentTitle={currentTitle} currentBody={currentBody} />
+  </div>;
 }
 
 export default Content;
