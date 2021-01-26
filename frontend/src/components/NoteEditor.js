@@ -1,10 +1,10 @@
 import React from "react";
 
-function NoteEditor() {
+function NoteEditor({ currentTitle, currentBody}) {
   return (
     <form className="note-editor">
-      <input type="text" name="title" />
-      <textarea name="body" />
+      <input type="text" name="title" value={currentTitle} />
+      <textarea name="body" value={currentBody} />
       <div className="button-row">
         <input className="button" type="submit" value="Save" />
         <button type="button">Cancel</button>
