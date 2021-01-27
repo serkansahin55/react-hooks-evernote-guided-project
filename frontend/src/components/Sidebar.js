@@ -2,7 +2,7 @@ import React from "react";
 import NoteList from "./NoteList";
 
 
-function Sidebar({notes, getClickedNote}) {
+function Sidebar({notes, getClickedNote, setNotes}) {
 
 
   function handleNewClick(e) {
@@ -13,12 +13,16 @@ function Sidebar({notes, getClickedNote}) {
     headers: {
       'Content-Type' : 'application/json'
     },
-    body: JSON.stringify({title: 'default', body: "placeholder"})
+    body: JSON.stringify({title: 'name', body: "placeholder"})
   })
   .then(response => response.json())
-  .then(data => console.log('Success:', data))
+  .then((note) => {
+    console.log('Success note object:', note);
+    setNotes([...notes, note]);
+  })
 }
-  
+
+
   return (
     <div className="master-detail-element sidebar">
       <NoteList notes={notes} getClickedNote={getClickedNote} />

@@ -106,8 +106,8 @@ baseline deliverables you need to complete:
 ### Creating Notes
 
 - [ x ] At the bottom of your left sidebar, show a `New` button.
-- [ ] Clicking `New` will create a new note via a `POST` request with some default title and body.
-- [ ] This new note should appear in the sidebar.
+- [x ] Clicking `New` will create a new note via a `POST` request with some default title and body.
+- [x ] This new note should appear in the sidebar.
 
 ![result](react-evernote-create.gif)
 

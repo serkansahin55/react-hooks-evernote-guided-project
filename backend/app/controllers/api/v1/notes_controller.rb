@@ -2,7 +2,12 @@ class Api::V1::NotesController < ApplicationController
   before_action :set_note, only: [:show,:update,:destroy]
 
   def index
-    notes = Note.all
+    notes = if params[:search].present?
+      # Note.where("title ILIKE ?", "%#{params[:search]%")
+      Note.all.select { |note| note.title =~ /#{params[:search]}/ }
+    else
+      Note.all
+    end
     render json: notes, status: 200
   end
 

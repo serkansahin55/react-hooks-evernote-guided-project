@@ -47,9 +47,9 @@ function NoteContainer() {
 
   return (
     <>
-      <Search />
+      <Search notes={notes} setNotes={setNotes} />
       <div className="container">
-        <Sidebar notes={notes} getClickedNote={getClickedNote} />
+        <Sidebar setNotes={setNotes} notes={notes} getClickedNote={getClickedNote} />
         <Content getUpdatedNote={getUpdatedNote} currentId={currentId} currentTitle={currentTitle} currentBody={currentBody} />
         
       </div>
