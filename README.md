@@ -113,7 +113,7 @@ baseline deliverables you need to complete:
 
 ### Filtering Notes
 
-- [ ] Implement the filter to search through your notes list by title.
+- [ x ] Implement the filter to search through your notes list by title.
 
 ![result](react-evernote-filter.gif)
 
@@ -133,5 +133,7 @@ Some suggestions:
 - Rich text formatting
 - Tagging
 - Emailing notes
+
+- Delete Button
 
 

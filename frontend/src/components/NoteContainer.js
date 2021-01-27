@@ -30,27 +30,51 @@ function NoteContainer() {
         return updatedNote
       } else { 
         return note
-      }
-      
+      }      
     }
     )
     setNotes(updatedNotes)
   }
 
-  function getClickedNote (title, body, id) {
+  function removeDeletedNote(deletedNoteId) {
+    console.log('deletedNoteId', deletedNoteId);
+    const updatedNotes = notes.filter((note) => {
+      if (note.id !== deletedNoteId) {
+        return note;
+      }     
+      }
+    )
+    // console.log('updatedNotes', updatedNotes);
+    setNotes(updatedNotes)
+  }
+
+
+  function getClickedNote(noteTitle, noteBody) {
+    setcurrentTitle(noteTitle);
+    setcurrentBody(noteBody);
+  } 
+
+  function getClickedNote(noteTitle, noteBody) {
+    setcurrentTitle(noteTitle);
+    setcurrentBody(noteBody);
+  }
+
+
+  function getClickedNote(title, body, id) {
     console.log(title, body, id)
-    setcurrentTitle(title);
+    setcurrentTitle(title); 
     setcurrentBody(body);
     setCurrentId(id)
 
   }
 
-  return (
+
+    return (
     <>
       <Search notes={notes} setNotes={setNotes} />
       <div className="container">
         <Sidebar setNotes={setNotes} notes={notes} getClickedNote={getClickedNote} />
-        <Content getUpdatedNote={getUpdatedNote} currentId={currentId} currentTitle={currentTitle} currentBody={currentBody} />
+        <Content removeDeletedNote={removeDeletedNote} getUpdatedNote={getUpdatedNote} currentId={currentId} currentTitle={currentTitle} currentBody={currentBody} />
         
       </div>
     </>

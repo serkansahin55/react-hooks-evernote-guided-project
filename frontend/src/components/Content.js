@@ -10,7 +10,7 @@ import Instructions from "./Instructions";
           Then complete the rest of your app before attempting to
           refactor to get this Content component to work.
 */
-function Content({getUpdatedNote, currentTitle, currentBody, currentId}) {
+function Content({removeDeletedNote, getUpdatedNote, currentTitle, currentBody, currentId}) {
 
   const [editFormVisible, setEditFormVisible] = useState(false)
 
@@ -19,7 +19,7 @@ function Content({getUpdatedNote, currentTitle, currentBody, currentId}) {
     if (editFormVisible === true) {
       return <NoteEditor getUpdatedNote={getUpdatedNote} currentId={currentId} editFormVisible={editFormVisible} setEditFormVisible={setEditFormVisible} currentTitle={currentTitle} currentBody={currentBody} />;
     } else if (editFormVisible === false) {
-      return <NoteViewer  editFormVisible={editFormVisible} setEditFormVisible={setEditFormVisible} currentTitle={currentTitle} currentBody={currentBody} />;
+      return <NoteViewer removeDeletedNote={removeDeletedNote} currentId={currentId} editFormVisible={editFormVisible} setEditFormVisible={setEditFormVisible} currentTitle={currentTitle} currentBody={currentBody} />;
     } else {
       return <Instructions />;
     }

@@ -4,15 +4,17 @@ function Search({notes, setNotes}) {
 
   const [searchParam, setSearchParam] = useState("");
 
+  
+
   function handleSubmit(e) {
     
     // only Enter button press will submit the form
     if (e.keyCode != 13) {
-      return;
+      return
     }
 
     console.log('submitting filtered form');
-    console.log(e.keyCode);
+    console.log(e.keyCode)
     e.preventDefault()
   
    fetch(`http://localhost:3000/api/v1/notes?search=${searchParam}`, {    
@@ -22,8 +24,7 @@ function Search({notes, setNotes}) {
   })
   .then(response => response.json())
   .then((filterdNotes) => {
-    // console.log('Success filterdNotes:', JSON.stringify(filterdNotes));
-    setNotes(filterdNotes);
+    setNotes(filterdNotes)
   })
 }
 
@@ -43,4 +44,4 @@ function Search({notes, setNotes}) {
   );
 }
 
-export default Search;
+export default Search
