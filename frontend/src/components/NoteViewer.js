@@ -1,27 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 // import NoteList from "./NoteList";
-import NoteEditor from "./NoteEditor";
 
-function NoteViewer({currentTitle, currentBody}) {
+function NoteViewer({currentTitle, currentBody, setEditFormVisible, editFormVisible}) {
 
-  const [editFormVisible, seteditFormVisible] = useState(false);
 
   function handleClick() {
     console.log('edit clicked!');
-    editFormVisible(true);
+    setEditFormVisible(!editFormVisible);
   }
+
   
   return (
+  
   <>
       <h1>Title: {currentTitle}</h1>
       <h3>Body: {currentBody} </h3>
       <button onClick={handleClick}>Edit</button>
 
-      if (editFormVisible) {
-        <NoteEditor currentTitle={currentTitle} currentBody={currentBody} />
-      }
-    </>
+ </>
   );
 }
 
 export default NoteViewer;
+
+
+

@@ -1,7 +1,7 @@
 import React from "react";
 import TextTruncate from 'react-text-truncate'
 
-function NoteItem({noteTitle, noteBody, getClickedNote}) {
+function NoteItem({noteTitle, noteBody, noteId, getClickedNote}) {
 
   // const [readMore,setReadMore]=useState(false);
 
@@ -11,10 +11,8 @@ function NoteItem({noteTitle, noteBody, getClickedNote}) {
   
 
   function handleClick() {
-    var result = getClickedNote(noteTitle, noteBody)
-    console.log(result);
-    return result;
-  }
+    getClickedNote(noteTitle, noteBody, noteId) 
+    }
 
   return (
     <li>

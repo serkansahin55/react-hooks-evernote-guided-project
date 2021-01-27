@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NoteEditor from "./NoteEditor";
 import NoteViewer from "./NoteViewer";
 import Instructions from "./Instructions";
@@ -10,20 +10,22 @@ import Instructions from "./Instructions";
           Then complete the rest of your app before attempting to
           refactor to get this Content component to work.
 */
-function Content({currentTitle, currentBody}) {
+function Content({getUpdatedNote, currentTitle, currentBody, currentId}) {
+
+  const [editFormVisible, setEditFormVisible] = useState(false)
+
 
   const getContent = () => {
-    if (false) {
-      return <NoteEditor />;
-    } else if (false) {
-      return <NoteViewer />;
+    if (editFormVisible === true) {
+      return <NoteEditor getUpdatedNote={getUpdatedNote} currentId={currentId} editFormVisible={editFormVisible} setEditFormVisible={setEditFormVisible} currentTitle={currentTitle} currentBody={currentBody} />;
+    } else if (editFormVisible === false) {
+      return <NoteViewer  editFormVisible={editFormVisible} setEditFormVisible={setEditFormVisible} currentTitle={currentTitle} currentBody={currentBody} />;
     } else {
       return <Instructions />;
     }
   };
 
   return <div className="master-detail-element detail">{getContent()}
-  <NoteViewer currentTitle={currentTitle} currentBody={currentBody} />
   </div>;
 }
 
